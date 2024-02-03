@@ -1,13 +1,13 @@
-package com.demo.playspace;
+package com.playspace;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PostgisApplication {
+public class PlaySpaceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PostgisApplication.class, args);
+		SpringApplication.run(PlaySpaceApplication.class, args);
 	}
 
 //	@Bean

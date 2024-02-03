@@ -1,30 +1,16 @@
 server:
   port: 8989
-  
+
 spring:
-  # Database configuration
   datasource:
-    driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:mydb}
-    username: ${DB_USER:tree}
-    password: ${DB_PASSWORD:123456}
-  # JPA configuration  
+    url: "jdbc:mysql://localhost:3306/playspace"
+    username: "root"
+    password: "password"
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: update
-      # Avoid issue with JPA case insensitive
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    # This should no longer be needed with Hibernate 6
-    database-platform: org.hibernate.spatial.dialect.postgis.PostgisPG10Dialect
-    show-sql: false
-    database: postgresql
-    # PotGIS configuration
     properties:
       hibernate:
-        jdbc:
-          lob:
-            non_contextual_creation: true
-logging:
-  level:
-    org.hibernate.type.descriptor.sql: trace
+        dialect: "org.hibernate.dialect.MySQL5Dialect"
